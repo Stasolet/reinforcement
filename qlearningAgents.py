@@ -85,7 +85,7 @@ class QLearningAgent(ReinforcementAgent):
         if len(actions) == 0:
             return None
         else:
-            max_action = [action for action in actions if self.getQValue(state, action) == state_max_qval]
+            max_action = [action for action in actions if self.getQValue(state, action) >= state_max_qval]
             ## to select the non-seen state over the negative qvalued state
             # if all(i <= 0 for i in max_action) and any(i == 0 for i in max_action) :
             #   max_action = [action for action in actions if self.getQValue(state, action) == 0]
